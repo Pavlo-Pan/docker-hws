@@ -1,0 +1,20 @@
+# Исключить node_modules и временные файлы
+node_modules
+npm-debug.log
+Dockerfile*
+.dockerignore
+dist
+
+# Исключить конфиденциальные файлы
+.env
+.env.*
+
+# Исключить директории IDE и прочий мусор
+.vscode
+.idea
+*.swp
+*.swo
+
+# Исключить тесты и документацию
+tests
+*.md

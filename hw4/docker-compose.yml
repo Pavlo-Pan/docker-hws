@@ -1,0 +1,51 @@
+services:
+  backend:
+    build:
+      context: ./animal-eshop-backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_DIALECT=postgres
+      - DATABASE_NAME=animal_eshop_database     
+      - DATABASE_USER=database_user      
+      - DATABASE_PASSWORD=gkSaJ6tURf2ANERsL
+      - DATABASE_HOST=database
+      - DATABASE_PORT=5432               
+      - JWT_SECRET=ffebf4a421f2000454f3da94a4d355468c07624837ebad40afb4ce7f8b136a0e
+    depends_on:
+      - database
+    networks:
+      - mynetwork
+
+  database:
+    image: postgres:16
+    environment:
+      - POSTGRES_DB=animal_eshop_database
+      - POSTGRES_USER=database_user
+      - POSTGRES_PASSWORD=gkSaJ6tURf2ANERsL
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+  redis:
+    image: redis:latest
+    networks:
+      - mynetwork
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    networks:
+      - mynetwork
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+
+networks:
+  mynetwork:
+    driver: bridge
