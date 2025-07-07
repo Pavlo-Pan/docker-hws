@@ -1,4 +1,4 @@
-PS C:\Users\user> aws ec2 create-security-group  --group-name 281024-wdm-paul-sg --description "Security Group for MySQL and HTTPS and SSH"   --vpc-id vpc-0e84d428745fd3ebd
+PS C:\Users\user> aws ec2 create-security-group --group-name 281024-wdm-paul-sg --description "Security Group for MySQL and HTTPS and SSH" --vpc-id vpc-0e84d428745fd3ebd
 
 {
 
@@ -8,7 +8,7 @@ PS C:\Users\user> aws ec2 create-security-group  --group-name 281024-wdm-paul-sg
 
 }
 
-PS C:\Users\user> aws ec2 authorize-security-group-ingress   --group-id sg-0f503cfe117ec232c  --protocol tcp   --port 22   --cidr 0.0.0.0/0
+PS C:\Users\user> aws ec2 authorize-security-group-ingress --group-id sg-0f503cfe117ec232c --protocol tcp --port 22 --cidr 0.0.0.0/0
 
 {
 
@@ -42,8 +42,7 @@ PS C:\Users\user> aws ec2 authorize-security-group-ingress   --group-id sg-0f503
 
 }
 
-
-PS C:\Users\user> aws ec2 authorize-security-group-ingress   --group-id sg-0f503cfe117ec232c  --protocol tcp  --port 3306  --cidr 0.0.0.0/0
+PS C:\Users\user> aws ec2 authorize-security-group-ingress --group-id sg-0f503cfe117ec232c --protocol tcp --port 3306 --cidr 0.0.0.0/0
 
 {
 
@@ -77,8 +76,7 @@ PS C:\Users\user> aws ec2 authorize-security-group-ingress   --group-id sg-0f503
 
 }
 
-
-PS C:\Users\user> aws ec2 authorize-security-group-ingress   --group-id sg-0f503cfe117ec232c  --protocol tcp   --port 443   --cidr 0.0.0.0/0
+PS C:\Users\user> aws ec2 authorize-security-group-ingress --group-id sg-0f503cfe117ec232c --protocol tcp --port 443 --cidr 0.0.0.0/0
 
 {
 
@@ -112,7 +110,7 @@ PS C:\Users\user> aws ec2 authorize-security-group-ingress   --group-id sg-0f503
 
 }
 
-PS C:\Users\user> aws ec2 describe-security-groups  --group-ids sg-0f503cfe117ec232c  --query 'SecurityGroups[*].IpPermissions'  --output json
+PS C:\Users\user> aws ec2 describe-security-groups --group-ids sg-0f503cfe117ec232c --query 'SecurityGroups[*].IpPermissions' --output json
 
 [
 
@@ -158,7 +156,7 @@ PS C:\Users\user> aws ec2 describe-security-groups  --group-ids sg-0f503cfe117ec
 
                 {
 
-                    "CidrIp": "0.0.0.0/0"
+                    "CidrIp": "0.0.0.0/0"s
 
                 }
 
@@ -199,7 +197,7 @@ PS C:\Users\user> aws ec2 describe-security-groups  --group-ids sg-0f503cfe117ec
     ]
 
 ]
-PS C:\Users\user> aws ec2 delete-security-group   --group-id sg-0f503cfe117ec232c
+PS C:\Users\user> aws ec2 delete-security-group --group-id sg-0f503cfe117ec232c
 
 {
 
@@ -209,7 +207,4 @@ PS C:\Users\user> aws ec2 delete-security-group   --group-id sg-0f503cfe117ec232
 
 }
 
-
 PS C:\Users\user>
-
-
