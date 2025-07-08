@@ -1,0 +1,24 @@
+# Локальные Terraform файлы состояния
+*.tfstate
+*.tfstate.backup
+
+# Файл с переменными (если используешь его для секретов)
+*.tfvars
+*.tfvars.json
+
+# Кэш Terraform
+.terraform/
+.terraform.lock.hcl
+
+# План (если используется)
+terraform.tfplan
+
+# Вывод уничтожения
+destroy-output.txt
+
+# IDE и системные файлы
+*.log
+*.swp
+*.DS_Store
+*.idea/
+.vscode/
